@@ -47,37 +47,38 @@ if (isset($_GET["username"])) {
         // Return Steve Head if Failed/Not Allowed/Not Found.
         $file = imagecreatefrompng("./steve.png");
     }
+}
+// Image Function Starts
+$format = $_GET["format"] ?? "png";
+$result = imagecreatetruecolor($width, $height);
+// Check for JPEG/JPG Format
+if ($format == "jpeg" || $format == "jpg") {
+    $format = "jpeg";
+    $bga = imagecolorallocate($result, 255, 255, 255);
+} else {
+    // Functions for PNG Format
+    $bga = imagecolorallocatealpha($result, 175, 54, 134, 127);
+    imagecolortransparent($result, $bga);
+}
+imagefill($result, 0, 0, $bga);
 
-    // Image Function Starts
-    $format = $_GET["format"] ?? "png";
-    $result = imagecreatetruecolor($width,$height);
-    // Check for JPEG/JPG Format
-    if ($format == "jpeg" || $format == "jpg") {
-        $format = "jpeg";
-        $bga = imagecolorallocate($result, 255, 255, 255);
-    } else {
-        // Functions for PNG Format
-        $bga = imagecolorallocatealpha($result, 175, 54, 134, 127);
-        imagecolortransparent($result, $bga);
-    }
-    imagefill($result, 0, 0, $bga);
+// Function for changing 'imagecopy' Positions.
+function relocatePosition($n, $size) {
+    $number = $n * ($size / 272);
+    return $number;
+}
 
-    // Function for changing 'imagecopy' Positions.
-    function relocatePosition($n, $size) {
-        $number = $n * ($size/272);
-        return $number;
-    }
+// Copying the Head of Skin
+imagecopyresampled($result, $file, relocatePosition(8, $width), relocatePosition(8, $height), 8, 8, relocatePosition(256, $width), relocatePosition(256, $height), 8, 8);
+imagecopyresampled($result, $file, relocatePosition(0, $width), relocatePosition(0, $height), 40, 8, relocatePosition(272, $width), relocatePosition(272, $height), 8, 8);
 
-    // Copying the Head of Skin
-    imagecopyresampled($result,$file,relocatePosition(8, $width),relocatePosition(8, $height),8,8,relocatePosition(256, $width),relocatePosition(256, $height),8,8);
-    imagecopyresampled($result,$file,relocatePosition(0, $width),relocatePosition(0, $height),40,8,relocatePosition(272, $width),relocatePosition(272, $height),8,8);
+// Enable Preview for use with Browser
+header("Content-Type: image/" . $format);
 
-    // Enable Preview for use with Browser
-    header("Content-Type: image/".$format);
-
-    // Printing Image
-    if ($format == "jpeg") {imagejpeg($result);}
-    else {imagepng($result);}
-    imagedestroy($result);
-
-} else return null;
+// Printing Image
+if ($format == "jpeg") {
+    imagejpeg($result);
+} else {
+    imagepng($result);
+}
+imagedestroy($result);

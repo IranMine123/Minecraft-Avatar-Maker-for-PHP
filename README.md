@@ -7,12 +7,16 @@ Be sure to check the File itself to know how it works.
 
 ## URL Variables
 - Username
+
 Defines the Username of Skin. Not Defining will return "Steve" Head.
 - Format
+
 Defines the Format of the file. Supports "JPEG" and "PNG".
 - Width and Height
+
 Defines the size of the file. if only one of them is defined, the other one will be equal to defined.
 - Size
+
 Defines both Width and Height in equal. Width and Height Variables on the URL will be Ignored if this is Defined.
 
 

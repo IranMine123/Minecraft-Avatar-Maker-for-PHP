@@ -1,8 +1,9 @@
 # Advanced Minecraft Avatar Maker for PHP
-## By Arman Studios
+### By Arman Studios
 
 an API code to get Minecraft Head Avatar from Mojang API with PHP code.
 Be sure to check the File itself to know how it works.
+
 
 ## URL Variables
 - Username
@@ -14,7 +15,9 @@ Defines the size of the file. if only one of them is defined, the other one will
 - Size
 Defines both Width and Height in equal. Width and Height Variables on the URL will be Ignored if this is Defined.
 
+
 To use, Download both "Avatar-Maker.php" and "Steve.png" overwise it will break.
 
+
 Code by Arman Studios (IranMine123)
-Please Check the License File for the Term of Use.
+Please Check the License File for the Terms of Use.

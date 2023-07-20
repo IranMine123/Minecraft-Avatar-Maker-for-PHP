@@ -6,7 +6,7 @@ Be sure to check the File itself to know how it works.
 
 also this code have special Functions that make the layers of skin have different sizes.
 Example:
-[[https://api.armanstudios.ir/apps/minecraft/avatar-maker.php?username=IranMine123]]
+![IranMine123](https://api.armanstudios.ir/apps/minecraft/avatar-maker.php?username=IranMine123)
 
 
 ## URL Variables

@@ -4,6 +4,7 @@
 an API code to get Minecraft Head Avatar from Mojang API with PHP code.
 Be sure to check the File itself to know how it works.
 
+
 also this code have special Functions that make the layers of skin have different sizes.
 Example:
 

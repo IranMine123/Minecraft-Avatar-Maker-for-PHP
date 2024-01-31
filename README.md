@@ -5,10 +5,6 @@ an API code to get Minecraft Head Avatar from Mojang API with PHP code.
 Be sure to check the File itself to know how it works.<br></br>
 
 also, this code has special Functions that make the layers of skin have different sizes.
-Example:
-
-![IranMine123](https://api.armanstudios.ir/apps/minecraft/avatar-maker.php?username=IranMine123&size=128)
-![Steve](https://api.armanstudios.ir/apps/minecraft/avatar-maker.php?username=Steve&size=128)
 
 ## URL Variables
 - Username
